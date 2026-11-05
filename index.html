@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="kk">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#0b3554">
+<title>ChemSafe AI — Тұрмыстық химия қауіпсіздігі</title>
+<style>
+:root{--navy:#0b3554;--blue:#087eae;--cyan:#dff5fb;--ink:#183448;--muted:#617789;--bg:#f4f9fc;--white:#fff;--line:#e1ebf1;--green:#16866a;--red:#c53c42;--shadow:0 14px 40px rgba(12,55,82,.09)}
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;font-family:Inter,Segoe UI,Arial,sans-serif;color:var(--ink);background:var(--bg);line-height:1.55}
+header{position:sticky;top:0;z-index:10;background:rgba(255,255,255,.94);backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{max-width:1180px;margin:auto;padding:13px 22px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:10px;font-weight:850;color:var(--navy);font-size:20px;text-decoration:none}.logo{width:39px;height:39px;border-radius:13px;background:linear-gradient(135deg,#087eae,#19b6bd);display:grid;place-items:center;color:white;font-size:21px}
+nav{display:flex;gap:20px;align-items:center;flex-wrap:wrap}nav a{font-size:13px;color:#496477;text-decoration:none;font-weight:650}nav a:hover{color:var(--blue)}
+.wrap{max-width:1180px;margin:auto;padding:0 22px}
+.hero{padding:62px 0 45px;background:radial-gradient(circle at 85% 20%,#d7f4f8 0,transparent 30%),linear-gradient(120deg,#f7fcff,#eaf7fb)}
+.hero-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:35px;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:8px;background:#dff5fb;color:#08749e;border:1px solid #c8ebf4;border-radius:30px;padding:7px 13px;font-size:12px;font-weight:800;letter-spacing:.04em}
+h1{font-size:clamp(38px,5vw,62px);line-height:1.04;letter-spacing:-.04em;color:var(--navy);margin:18px 0}.gradient{color:var(--blue)}
+.lead{font-size:17px;color:#557083;max-width:650px}.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:25px}
+.btn{border:0;border-radius:12px;padding:12px 18px;font-weight:750;cursor:pointer;text-decoration:none;display:inline-flex;align-items:center;justify-content:center;gap:8px;font-size:14px;transition:.2s}
+.primary{background:var(--blue);color:white;box-shadow:0 8px 18px #087eae33}.primary:hover{background:#06688f;transform:translateY(-1px)}.secondary{background:white;color:var(--navy);border:1px solid var(--line)}
+.hero-art{background:linear-gradient(145deg,#0b3554,#087eae);border-radius:28px;padding:26px;color:white;box-shadow:var(--shadow);position:relative;overflow:hidden;min-height:300px}
+.hero-art:before,.hero-art:after{content:"";position:absolute;border:1px solid #ffffff25;border-radius:50%;width:260px;height:260px;right:-80px;top:-100px}.hero-art:after{width:180px;height:180px;right:-40px;top:-60px}
+.art-title{font-size:13px;opacity:.8;font-weight:700}.bottle-row{display:flex;justify-content:center;align-items:end;gap:15px;margin:26px 0 20px}
+.bottle{width:70px;height:145px;border-radius:16px 16px 12px 12px;background:linear-gradient(90deg,#d7f4f8,#fff 45%,#b9e7f0);position:relative;box-shadow:0 12px 22px #001d3344}
+.bottle:before{content:"";position:absolute;width:30px;height:17px;background:#eafaff;top:-13px;left:20px;border-radius:5px 5px 0 0}.bottle:after{content:"SAFE";position:absolute;top:58px;left:13px;color:#087eae;font-weight:900;font-size:12px}
+.bottle:nth-child(2){height:175px;width:82px;background:linear-gradient(90deg,#b9ebdc,#fff 48%,#9ddbc9)}.bottle:nth-child(2):after{content:"CLEAN";left:14px;color:#16866a}.bottle:nth-child(3){height:125px;background:linear-gradient(90deg,#d6e7ff,#fff 48%,#b9d5fa)}
+.art-note{background:#ffffff18;border:1px solid #ffffff30;padding:12px 14px;border-radius:14px;font-size:13px}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:13px;margin-top:-5px;position:relative}
+.stat{background:white;border:1px solid var(--line);padding:17px;border-radius:16px;box-shadow:0 6px 18px #12354a08}.stat strong{display:block;color:var(--navy);font-size:23px}.stat span{color:var(--muted);font-size:12px}
+section{padding:55px 0}.section-head{display:flex;justify-content:space-between;align-items:end;gap:20px;margin-bottom:24px}.kicker{color:var(--blue);font-size:11px;font-weight:850;letter-spacing:.13em;text-transform:uppercase}.section-head h2{font-size:clamp(26px,3vw,36px);color:var(--navy);margin:5px 0}.sub{color:var(--muted);max-width:660px;margin:0}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}.card{background:white;border:1px solid var(--line);border-radius:18px;padding:20px;box-shadow:0 7px 22px #0b355408}.card-icon{width:48px;height:48px;border-radius:14px;background:#e6f6fa;display:grid;place-items:center;font-size:24px;margin-bottom:13px}.card h3{margin:0 0 7px;color:var(--navy);font-size:17px}.card p{margin:0;color:var(--muted);font-size:13px}.tag{display:inline-block;margin-top:12px;padding:5px 9px;border-radius:20px;background:#edf6fa;color:#08749e;font-size:11px;font-weight:750}
+.catalog-tools{display:flex;gap:10px;flex-wrap:wrap;margin-bottom:18px}.field,select,textarea{width:100%;border:1px solid #d8e5ec;background:white;border-radius:11px;padding:12px 13px;font:inherit;color:var(--ink);outline:none}.field:focus,select:focus,textarea:focus{border-color:#55b6d2;box-shadow:0 0 0 3px #087eae18}.search{flex:1;min-width:210px}.filter{width:210px}
+.product-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:15px}.product{background:white;border:1px solid var(--line);border-radius:17px;padding:17px;display:flex;flex-direction:column;gap:8px}.product-top{display:flex;justify-content:space-between;gap:10px}.product h3{font-size:16px;color:var(--navy);margin:0}.product p{font-size:12px;color:var(--muted);margin:0}.risk{font-size:10px;font-weight:850;padding:5px 8px;border-radius:20px;white-space:nowrap;height:max-content}.risk.high{background:#fff0ed;color:#b73c31}.risk.medium{background:#fff6df;color:#946700}.risk.low{background:#e8f7ef;color:#16764f}.more{margin-top:auto;padding-top:8px;color:var(--blue);font-weight:800;font-size:12px;cursor:pointer;border:0;background:none;text-align:left}
+.symbols{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}.symbol{background:white;border:1px solid var(--line);border-radius:16px;padding:18px;text-align:center}.diamond{width:57px;height:57px;border:3px solid #d93438;transform:rotate(45deg);margin:7px auto 18px;background:#fff;display:grid;place-items:center}.diamond span{transform:rotate(-45deg);font-size:25px}.symbol h3{font-size:14px;color:var(--navy);margin:0 0 5px}.symbol p{font-size:12px;color:var(--muted);margin:0}
+.split{display:grid;grid-template-columns:1fr 1fr;gap:20px;align-items:stretch}.panel{background:white;border:1px solid var(--line);border-radius:20px;padding:23px;box-shadow:0 7px 22px #0b355408}.panel h3{color:var(--navy);margin:0 0 7px}.panel .hint{font-size:12px;color:var(--muted);margin:0 0 16px}.chat{height:270px;overflow:auto;background:#f5fafc;border:1px solid var(--line);border-radius:14px;padding:13px;margin:13px 0;display:flex;flex-direction:column;gap:10px}.bubble{max-width:92%;padding:10px 12px;border-radius:13px;font-size:13px;white-space:pre-wrap}.bot{background:white;border:1px solid var(--line);align-self:flex-start}.user{background:#dff3fa;color:#124d69;align-self:flex-end}.chat-form{display:flex;gap:8px}.chat-form input{flex:1;min-width:0}.notice{font-size:11px;color:#7a6a40;background:#fff8e7;padding:10px;border-radius:10px;margin-top:12px}
+.quiz-question{font-weight:750;color:var(--navy);margin:12px 0}.option{display:block;width:100%;text-align:left;background:#f7fafc;border:1px solid var(--line);border-radius:11px;padding:10px 12px;margin:8px 0;cursor:pointer;color:var(--ink);font-size:13px}.option:hover{border-color:#6bbbd3}.option.selected{border-color:var(--blue);background:#e8f7fb}.option.correct{border-color:#20a276;background:#eaf8f1}.option.wrong{border-color:#d45b5b;background:#fff0ef}.quiz-foot{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:15px}.progress{height:7px;background:#e7eff3;border-radius:10px;overflow:hidden;margin:12px 0}.progress span{display:block;height:100%;background:linear-gradient(90deg,#087eae,#24b7b1);width:0}
+.rules{display:grid;grid-template-columns:repeat(2,1fr);gap:12px}.rule{display:flex;gap:12px;background:white;border:1px solid var(--line);border-radius:14px;padding:15px}.rule b{display:block;color:var(--navy);font-size:13px}.rule span{font-size:12px;color:var(--muted)}
+footer{background:#092d48;color:#d7e8f1;padding:32px 0;margin-top:20px}.foot{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}.foot small{color:#9eb9c9}.modal{position:fixed;inset:0;background:#061d2dcc;display:none;place-items:center;padding:20px;z-index:30}.modal.show{display:grid}.modal-box{background:white;border-radius:18px;max-width:500px;width:100%;padding:24px;position:relative}.close{position:absolute;right:15px;top:12px;border:0;background:#edf4f7;border-radius:8px;padding:6px 10px;cursor:pointer}
+@media(max-width:850px){nav{gap:10px}nav a{font-size:12px}.hero-grid,.split{grid-template-columns:1fr}.hero-art{min-height:260px}.cards,.product-grid{grid-template-columns:repeat(2,1fr)}.symbols{grid-template-columns:repeat(2,1fr)}}
+@media(max-width:560px){.nav{align-items:flex-start}.nav nav{display:none}.hero{padding:42px 0 32px}.stats{grid-template-columns:1fr}.cards,.product-grid,.rules{grid-template-columns:1fr}.section-head{display:block}.filter{width:100%}.symbols{grid-template-columns:repeat(2,1fr)}section{padding:40px 0}.hero-art{padding:20px}}
+</style>
+</head>
+<body>
+<header><div class="nav">
+<a class="brand" href="#home"><span class="logo">✚</span> ChemSafe <span style="color:#087eae">AI</span></a>
+<nav><a href="#catalog">Каталог</a><a href="#symbols">Қауіп белгілері</a><a href="#ingredients">Құрам</a><a href="#assistant">AI кеңесші</a><a href="#quiz">Тест</a></nav>
+</div></header>
+<main id="home">
+<div class="hero"><div class="wrap hero-grid">
+<div><span class="eyebrow">✦ АҚПАРАТТЫҚ ҚАУІПСІЗДІК ПЛАТФОРМАСЫ</span>
+<h1>Тұрмыстық химияны <span class="gradient">қауіпсіз</span> қолдан!</h1>
+<p class="lead">Өнім құрамын таны, қаптамадағы қауіп белгілерін түсін және күнделікті өмірде дұрыс сақтық шараларын таңда. Барлығы бір анықтамалықта.</p>
+<div class="actions"><a class="btn primary" href="#catalog">Каталогты ашу <span>→</span></a><a class="btn secondary" href="#quiz">Біліміңді тексер</a></div></div>
+<div class="hero-art"><div class="art-title">CHEMSAFE AI · SMART HOME SAFETY</div><div class="bottle-row"><div class="bottle"></div><div class="bottle"></div><div class="bottle"></div></div><div class="art-note">🛡️ <b>Қауіпсіздік – ақпараттан басталады.</b><br>Әр өнімді қолданар алдында заттаңбасын оқыңыз.</div></div>
+</div></div>
+<div class="wrap stats">
+<div class="stat"><strong>01</strong><span>Өнім туралы анықтама</span></div><div class="stat"><strong>GHS</strong><span>Халықаралық қауіп белгілері</span></div><div class="stat"><strong>AI</strong><span>Ақпараттық көмекші</span></div>
+</div>
+
+<section id="catalog"><div class="wrap">
+<div class="section-head"><div><div class="kicker">01 · Өнімдер базасы</div><h2>Тұрмыстық химия каталогы</h2><p class="sub">Өнімді іздеңіз немесе санаты бойынша таңдаңыз. Ақпарат жалпы анықтамалық сипатта.</p></div></div>
+<div class="catalog-tools"><input id="search" class="field search" placeholder="Өнім немесе зат атауын жазыңыз..."><select id="category" class="field filter"><option value="all">Барлық санат</option><option>Тазартқыш</option><option>Жуу құралдары</option><option>Дезинфекция</option><option>Ауа тазартқыш</option></select></div>
+<div class="product-grid" id="products"></div>
+</div></section>
+
+<section id="symbols" style="background:#eaf5f9"><div class="wrap">
+<div class="section-head"><div><div class="kicker">02 · GHS пиктограммалары</div><h2>Қаптамадағы қауіп белгілері</h2><p class="sub">Қызыл жиекті ромб түріндегі белгілер өнімнің ықтимал қауіпті қасиеттері туралы ескертеді.</p></div></div>
+<div class="symbols">
+<div class="symbol"><div class="diamond"><span>🔥</span></div><h3>Жанғыш</h3><p>Оңай тұтануы мүмкін. От пен жылу көздерінен алыс ұстаңыз.</p></div>
+<div class="symbol"><div class="diamond"><span>🧪</span></div><h3>Күйдіргіш</h3><p>Теріге, көзге немесе металдарға зақым келтіруі мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>❗</span></div><h3>Тітіркендіргіш</h3><p>Тері мен көзді тітіркендіруі немесе зиянды әсер етуі мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>☠️</span></div><h3>Жедел уыттылық</h3><p>Аз мөлшерінің өзі ауыр улануға әкелуі мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>🌳</span></div><h3>Қоршаған ортаға қауіпті</h3><p>Су ағзаларына және табиғи ортаға зиян келтіруі мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>🫁</span></div><h3>Денсаулыққа елеулі қауіп</h3><p>Ұзақ мерзімді немесе ауыр денсаулық әсерлерін білдіруі мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>💥</span></div><h3>Жарылғыш</h3><p>Соққыдан, үйкелістен немесе қызудан жарылуы мүмкін.</p></div>
+<div class="symbol"><div class="diamond"><span>⭕</span></div><h3>Тотықтырғыш</h3><p>Өрттің күшеюіне немесе жануды қолдауға ықпал етуі мүмкін.</p></div>
+</div><p class="notice">Ескерту: бұл жерде пиктограммалар оқу мақсатында эмодзи арқылы берілген. Нақты GHS таңбаларының бейнесі – ақ фонда қызыл жиекті ромб ішіндегі қара пиктограмма.</p>
+</div></section>
+
+<section id="ingredients"><div class="wrap">
+<div class="section-head"><div><div class="kicker">03 · Химиялық құрам</div><h2>Құрамындағы заттар туралы</h2><p class="sub">Төмендегі мысалдар тұрмыстық өнімдерде кездесуі мүмкін белсенді заттарды түсіндіреді.</p></div></div>
+<div class="cards">
+<div class="card"><div class="card-icon">🧴</div><h3>Натрий гипохлориті</h3><p>Кейбір ағартқыш және дезинфекциялаушы өнімдерде кездеседі. Тері мен көзді күйдіруі мүмкін. Қышқылдармен немесе аммиакпен араластырғанда улы газдар бөлінуі ықтимал.</p><span class="tag">Ағартқыш құрамында</span></div>
+<div class="card"><div class="card-icon">🫧</div><h3>Беттік-белсенді заттар</h3><p>Май мен кірді кетіруге көмектеседі. Ыдыс жуғыш және кір жуғыш құралдарда кең таралған. Концентраттары көзді тітіркендіруі мүмкін.</p><span class="tag">Жуу құралдарында</span></div>
+<div class="card"><div class="card-icon">⚗️</div><h3>Натрий гидроксиді</h3><p>Кейбір құбыр тазартқыштарда қолданылады. Күшті күйдіргіш зат; теріге немесе көзге тисе ауыр зақым келтіруі мүмкін.</p><span class="tag">Құбыр тазартқышта</span></div>
+<div class="card"><div class="card-icon">💧</div><h3>Этанол және изопропанол</h3><p>Кейбір әйнек тазартқыштар мен дезинфекциялаушы құралдарда кездеседі. Буын көп мөлшерде жұтпау керек, сұйықтықтары жанғыш болуы мүмкін.</p><span class="tag">Еріткіш / дезинфекция</span></div>
+<div class="card"><div class="card-icon">🌿</div><h3>Лимон қышқылы</h3><p>Қақ кетіргіш және тазартқыш өнімдерде қолданылуы мүмкін. Көзге тигенде тітіркендіреді. Хлорлы ағартқышпен араластырмаңыз.</p><span class="tag">Қақ кетіргіште</span></div>
+<div class="card"><div class="card-icon">🧼</div><h3>Ферменттер</h3><p>Кір жуғыш құралдарда ақуыз, май және крахмал дақтарын ыдыратуға көмектеседі. Ұнтақ шаңын жұтудан сақтану қажет.</p><span class="tag">Кір жуғыш құралда</span></div>
+</div>
+</div></section>
+
+<section id="assistant" style="background:#eaf5f9"><div class="wrap">
+<div class="section-head"><div><div class="kicker">04 · Интеллектуалды көмекші</div><h2>ChemSafe AI кеңесшісі</h2><p class="sub">Химиялық зат немесе қауіпсіздік туралы сұрақ қойыңыз. Бұл нұсқада кеңесші алдын ала тексерілген анықтамалық білім базасымен жұмыс істейді.</p></div></div>
+<div class="split">
+<div class="panel"><h3>💬 Сұрағыңызды жазыңыз</h3><p class="hint">Мысалы: «Хлорлы ағартқышты сірке суымен араластыруға бола ма?»</p>
+<div class="chat" id="chat"><div class="bubble bot">Сәлем! Мен ChemSafe AI көмекшісімін. Тұрмыстық химияны қауіпсіз қолдану туралы сұрағыңызды қойыңыз.</div></div>
+<form class="chat-form" id="chatForm"><input class="field" id="question" placeholder="Сұрағыңызды енгізіңіз..." required><button class="btn primary">Жіберу</button></form>
+<div class="notice">Бұл – демонстрациялық AI прототипі, сыртқы AI API-ға қосылмаған. Жауаптар шектеулі анықтамалық ережелерден құралады.</div>
+</div>
+<div class="panel"><h3>💡 Жылдам сұрақтар</h3><p class="hint">Төмендегі сұрақты басып, кеңесшіні тексеріңіз.</p>
+<button class="option quick">Хлорлы ағартқышты сірке суымен араластыруға бола ма?</button>
+<button class="option quick">Тұрмыстық химияны қалай сақтау керек?</button>
+<button class="option quick">Тазартқыш көзге тисе не істеу керек?</button>
+<button class="option quick">Әртүрлі тазартқыштарды араластыруға бола ма?</button>
+<button class="option quick">Қаптамадағы қауіп белгілерін не үшін оқу керек?</button>
+</div>
+</div></div></section>
+
+<section id="quiz"><div class="wrap">
+<div class="section-head"><div><div class="kicker">05 · Білімді тексеру</div><h2>Қауіпсіздік тесті</h2><p class="sub">5 сұраққа жауап беріп, тұрмыстық химияны қауіпсіз қолдану білімін тексеріңіз.</p></div></div>
+<div class="panel" style="max-width:760px;margin:auto"><div style="display:flex;justify-content:space-between;font-size:12px;color:var(--muted)"><b id="qCount">1 / 5 сұрақ</b><span id="scoreLive">Ұпай: 0</span></div><div class="progress"><span id="progress"></span></div><div class="quiz-question" id="qText"></div><div id="answers"></div><div class="quiz-foot"><span id="feedback" style="font-size:12px;color:var(--muted)"></span><button class="btn primary" id="next" disabled>Келесі сұрақ →</button></div></div>
+</div></section>
+
+<section id="rules" style="background:#eaf5f9"><div class="wrap">
+<div class="section-head"><div><div class="kicker">06 · Күнделікті қауіпсіздік</div><h2>Есте сақтайтын 6 ереже</h2><p class="sub">Әрқашан өнімнің өз заттаңбасындағы нұсқаулықты басшылыққа алыңыз.</p></div></div>
+<div class="rules">
+<div class="rule"><span>🧾</span><div><b>Заттаңбаны оқыңыз</b><span>Қолдану тәсілін, ескерту белгілерін және алғашқы көмек нұсқауын тексеріңіз.</span></div></div>
+<div class="rule"><span>🚫</span><div><b>Өнімдерді араластырмаңыз</b><span>Әсіресе ағартқышты қышқылдармен немесе аммиакпен ешқашан қоспаңыз.</span></div></div>
+<div class="rule"><span>🧤</span><div><b>Қорғаныс құралын қолданыңыз</b><span>Заттаңба талап етсе, қолғап пен көзілдірік киіңіз.</span></div></div>
+<div class="rule"><span>🌬️</span><div><b>Желдетуді қамтамасыз етіңіз</b><span>Өнімді нұсқаулыққа сай, жақсы желдетілетін жерде қолданыңыз.</span></div></div>
+<div class="rule"><span>🔒</span><div><b>Қауіпсіз жерде сақтаңыз</b><span>Түпнұсқа қаптамасында, балалар мен үй жануарлары қолы жетпейтін жерде ұстаңыз.</span></div></div>
+<div class="rule"><span>🆘</span><div><b>Төтенше жағдайда көмек шақырыңыз</b><span>Улану немесе күйік күдігі болса, 112 немесе 103 нөміріне хабарласыңыз.</span></div></div>
+</div>
+</div></section>
+</main>
+<footer><div class="wrap foot"><div><b style="font-size:18px">✚ ChemSafe AI</b><p style="font-size:13px;margin:7px 0">Қауіпсіздік – дұрыс ақпараттан басталады!</p></div><small>Оқу және ақпараттық мақсаттағы жоба · 2026<br>Нақты қауіпсіздік үшін өнім заттаңбасы мен SDS құжатын басшылыққа алыңыз.</small></div></footer>
+<div class="modal" id="modal"><div class="modal-box"><button class="close" onclick="closeModal()">✕</button><div id="modalContent"></div></div></div>
+<script>
+const data=[
+{name:"Хлорлы ағартқыш",cat:"Тазартқыш",ingredient:"Натрий гипохлориті болуы мүмкін",risk:"Жоғары",level:"high",desc:"Ақ матаны ағарту және дезинфекциялау үшін қолданылуы мүмкін.",safe:"Қышқылдармен, сірке суымен, аммиакпен немесе басқа тазартқыштармен араластырмаңыз. Заттаңбадағы нұсқауды орындаңыз."},
+{name:"Құбыр тазартқыш",cat:"Тазартқыш",ingredient:"Натрий гидроксиді немесе басқа белсенді зат",risk:"Жоғары",level:"high",desc:"Құбырдағы май мен органикалық қалдықтарды кетіруге арналған.",safe:"Күшті күйдіргіш болуы мүмкін. Қолғап/көз қорғанысын заттаңбаға сай қолданыңыз. Басқа өніммен араластырмаңыз."},
+{name:"Әйнек тазартқыш",cat:"Тазартқыш",ingredient:"Спирттер немесе басқа еріткіштер болуы мүмкін",risk:"Орташа",level:"medium",desc:"Шыны және жылтыр беттерді тазалауға арналған.",safe:"Желдетілетін жерде қолданыңыз. От көзінен алыс ұстаңыз; нақты құрамын заттаңбадан тексеріңіз."},
+{name:"Кір жуғыш ұнтақ",cat:"Жуу құралдары",ingredient:"Беттік-белсенді заттар, ферменттер және басқа қоспалар",risk:"Орташа",level:"medium",desc:"Киімдегі кір мен дақты кетіруге арналған.",safe:"Ұнтақ шаңын жұтпаңыз. Қолданғаннан кейін қолды жуыңыз. Балалардан алыс сақтаңыз."},
+{name:"Ыдыс жуғыш сұйықтық",cat:"Жуу құралдары",ingredient:"Беттік-белсенді заттар",risk:"Төмен",level:"low",desc:"Ыдыстағы май мен тағам қалдықтарын кетіреді.",safe:"Көзге тигізбеңіз, ішке қабылдамаңыз. Қаптамадағы мөлшерлеу нұсқауын сақтаңыз."},
+{name:"Дезинфекциялаушы құрал",cat:"Дезинфекция",ingredient:"Белсенді заты өнімге қарай өзгереді",risk:"Орташа",level:"medium",desc:"Беттердегі микроорганизмдерді азайтуға арналған.",safe:"Белгіленген әсер ету уақытын сақтаңыз. Басқа химиялық заттармен араластырмаңыз."},
+{name:"Ауа сергіткіш",cat:"Ауа тазартқыш",ingredient:"Хош иістендіргіштер және еріткіштер болуы мүмкін",risk:"Төмен",level:"low",desc:"Бөлмедегі иісті бүркемелеуге немесе азайтуға арналған.",safe:"Тікелей деммен жұтпаңыз. Оттан алыс ұстаңыз және нұсқаулықты орындаңыз."},
+{name:"Қақ кетіргіш",cat:"Тазартқыш",ingredient:"Лимон қышқылы немесе басқа қышқылдар болуы мүмкін",risk:"Орташа",level:"medium",desc:"Шәйнек, сантехника және беттердегі минералды қақты кетіруге арналған.",safe:"Хлорлы ағартқышпен араластырмаңыз. Материалға сәйкестігін және заттаңбаны тексеріңіз."},
+{name:"Кір жұмсартқыш",cat:"Жуу құралдары",ingredient:"Катионды беттік-белсенді заттар және хош иістендіргіштер",risk:"Төмен",level:"low",desc:"Матаны жұмсартуға және хош иіс беруге арналған.",safe:"Көзге тигізбеңіз, ішпеңіз. Балалардан алыс сақтаңыз."}
+];
+function renderProducts(){const q=document.getElementById('search').value.toLowerCase(),c=document.getElementById('category').value;const list=data.filter(x=>(c==='all'||x.cat===c)&&(x.name+' '+x.ingredient+' '+x.desc).toLowerCase().includes(q));document.getElementById('products').innerHTML=list.length?list.map((x,i)=>`<article class="product"><div class="product-top"><h3>${x.name}</h3><span class="risk ${x.level}">${x.risk} қауіп</span></div><p><b>Санат:</b> ${x.cat}</p><p><b>Ықтимал құрамы:</b> ${x.ingredient}</p><p>${x.desc}</p><button class="more" onclick="showProduct(${data.indexOf(x)})">Толығырақ оқу →</button></article>`).join(''):'<p>Іздеу бойынша өнім табылмады.</p>'}
+document.getElementById('search').addEventListener('input',renderProducts);document.getElementById('category').addEventListener('change',renderProducts);
+function showProduct(i){const x=data[i];document.getElementById('modalContent').innerHTML=`<span class="risk ${x.level}">${x.risk} қауіп</span><h2 style="color:var(--navy)">${x.name}</h2><p><b>Санаты:</b> ${x.cat}</p><p><b>Ықтимал құрамы:</b> ${x.ingredient}</p><p>${x.desc}</p><h3>Қауіпсіздік шаралары</h3><p>${x.safe}</p><p class="notice">Өнімнің нақты құрамы бренд пен түріне қарай өзгереді. Қаптамадағы заттаңбаны және SDS құжатын тексеріңіз.</p>`;document.getElementById('modal').classList.add('show')}
+function closeModal(){document.getElementById('modal').classList.remove('show')}document.getElementById('modal').addEventListener('click',e=>{if(e.target.id==='modal')closeModal()});
+const chat=document.getElementById('chat');
+function answer(q){const s=q.toLowerCase();if(/сірке|қышқыл|аммиак|араластыр/.test(s))return "ЖОҚ. Тұрмыстық химиялық өнімдерді өзара араластырмаңыз. Әсіресе хлорлы ағартқышты сірке суы, қышқыл немесе аммиак бар өнімдермен қосу улы газ бөлуі мүмкін. Қоспа жасап көрмеңіз; әр өнімді тек жеке, заттаңба нұсқауына сай қолданыңыз.";if(/сақта/.test(s))return "Өнімдерді түпнұсқа, жабық қаптамасында, құрғақ әрі салқын жерде, балалар мен үй жануарлары қолы жетпейтін жерде сақтаңыз. Тағам мен сусыннан бөлек ұстаңыз және заттаңбадағы температура талаптарын орындаңыз.";if(/көз|тері|тисе|шашыра/.test(s))return "Өнім көзге немесе теріге тисе, ластанған киімді шешіп, зақымданған жерді мол таза ағын сумен дереу шайыңыз. Өнім заттаңбасындағы алғашқы көмек нұсқауын орындаңыз. Ауырсыну, қызару немесе көрудің бұзылуы болса, 103/112 нөміріне хабарласыңыз. Көзге химиялық зат түскенде медициналық кеңес алыңыз.";if(/белгі|пиктограмма|ромб/.test(s))return "Қаптамадағы GHS пиктограммалары өнімнің жанғыш, күйдіргіш, уытты немесе қоршаған ортаға қауіпті болуы мүмкін екенін көрсетеді. Белгіні ғана емес, оның жанындағы ескерту сөзін, қауіп сипаттамасын және сақтық шараларын да оқыңыз.";if(/хлор|ағартқыш/.test(s))return "Хлорлы ағартқышты тек заттаңбадағы нұсқауға сай қолданыңыз. Оны сірке суымен, қышқылдармен, аммиакпен немесе басқа тазартқыштармен араластырмаңыз: улы газ бөлінуі мүмкін. Желдетуді қамтамасыз етіңіз.";if(/қолғап|қорған/.test(s))return "Қорғаныс құралдары өнімнің заттаңбасында көрсетіледі. Қажет болса химияға төзімді қолғап пен көзді қорғау құралын пайдаланыңыз. Қолданғаннан кейін қолды жуыңыз.";return "Бұл сұраққа анықтамалық базамда нақты жауап жоқ. Өнімнің атауын және заттаңбадағы белсенді затын көрсетіңіз. Қауіпсіздік үшін өндірушінің нұсқаулығы мен SDS құжатын басшылыққа алыңыз. Белгісіз өнімдерді араластырмаңыз."}
+function addMessage(t,who){const d=document.createElement('div');d.className='bubble '+who;d.textContent=t;chat.appendChild(d);chat.scrollTop=chat.scrollHeight}
+function ask(q){if(!q.trim())return;addMessage(q,'user');setTimeout(()=>addMessage(answer(q),'bot'),180)}
+document.getElementById('chatForm').addEventListener('submit',e=>{e.preventDefault();const i=document.getElementById('question');ask(i.value);i.value=''});document.querySelectorAll('.quick').forEach(b=>b.addEventListener('click',()=>ask(b.textContent)));
+const questions=[{q:"Хлорлы ағартқышты сірке суымен араластыруға бола ма?",a:["Иә, тазарту әсері артады","Жоқ, улы хлор газы бөлінуі мүмкін","Тек ыстық сумен араластырса болады"],c:1,e:"Хлорлы ағартқышты қышқылдармен араластыру улы газ бөлуі мүмкін."},{q:"Тұрмыстық химияны қайда сақтау керек?",a:["Түпнұсқа қаптамасында, балалардан алыс","Сусын бөтелкесіне құйып","Тағаммен бірге"],c:0,e:"Түпнұсқа қаптама ескертулер мен қауіпсіздік ақпаратын сақтайды."},{q:"Өнім көзге шашыраса, алғашқы әрекет қандай?",a:["Көзді уқалау","Мол таза сумен шаю","Күте тұру"],c:1,e:"Көзді дереу мол сумен шайып, заттаңба нұсқауын және медициналық кеңесті орындаңыз."},{q:"GHS қауіп белгісі не үшін қажет?",a:["Өнімнің бағасын көрсету","Өнімнің түсін көрсету","Қауіп түрі туралы ескерту"],c:2,e:"GHS пиктограммалары химиялық өнімнің қауіптілік сипатын білдіреді."},{q:"Әртүрлі тазартқыштарды қолданғанда не істеу керек?",a:["Барлығын бірге араластыру","Әр өнімді нұсқаулыққа сай бөлек қолдану","Мөлшерін екі есе көбейту"],c:1,e:"Өнімдерді араластырмаңыз; әрқайсысының заттаңбасындағы нұсқауды орындаңыз."}];
+let qi=0,score=0,chosen=null,locked=false;
+function drawQuiz(){const q=questions[qi];document.getElementById('qCount').textContent=`${qi+1} / ${questions.length} сұрақ`;document.getElementById('scoreLive').textContent='Ұпай: '+score;document.getElementById('progress').style.width=(qi/questions.length*100)+'%';document.getElementById('qText').textContent=q.q;document.getElementById('feedback').textContent='';document.getElementById('next').disabled=true;document.getElementById('next').textContent=qi===questions.length-1?'Нәтижені көру':'Келесі сұрақ →';document.getElementById('answers').innerHTML=q.a.map((a,i)=>`<button class="option" data-i="${i}">${String.fromCharCode(65+i)}. ${a}</button>`).join('');chosen=null;locked=false;document.querySelectorAll('#answers .option').forEach(b=>b.onclick=()=>{if(locked)return;chosen=+b.dataset.i;document.querySelectorAll('#answers .option').forEach(x=>x.classList.remove('selected'));b.classList.add('selected');document.getElementById('next').disabled=false})}
+document.getElementById('next').onclick=()=>{if(!locked){locked=true;const q=questions[qi];const opts=[...document.querySelectorAll('#answers .option')];opts[q.c].classList.add('correct');if(chosen===q.c)score++;else if(chosen!==null)opts[chosen].classList.add('wrong');document.getElementById('scoreLive').textContent='Ұпай: '+score;document.getElementById('feedback').textContent=(chosen===q.c?'Дұрыс! ':'Қате. ')+q.e;document.getElementById('next').textContent=qi===questions.length-1?'Нәтижені көру':'Жалғастыру →';return}if(qi<questions.length-1){qi++;drawQuiz()}else{document.getElementById('qText').textContent=`Тест аяқталды! Нәтижеңіз: ${score} / ${questions.length}`;document.getElementById('answers').innerHTML=`<p>${score>=4?'Керемет! Қауіпсіздік ережелерін жақсы меңгергенсіз.':score>=3?'Жақсы нәтиже! Ережелерді тағы бір қайталап шығыңыз.':'Қауіпсіздік ережелерін қайта оқып, тестті қайталап көріңіз.'}</p><button class="btn secondary" onclick="restartQuiz()">Қайта тапсыру</button>`;document.getElementById('progress').style.width='100%';document.getElementById('feedback').textContent='';document.getElementById('next').style.display='none'}};
+function restartQuiz(){qi=0;score=0;document.getElementById('next').style.display='inline-flex';drawQuiz()}
+renderProducts();drawQuiz();
+</script>
+</body></html>
